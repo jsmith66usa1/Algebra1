@@ -6,6 +6,9 @@
     <title>Algebra 1 Tutoring Session Outline & Slideshows</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax CDN for LaTeX rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Custom styles for better aesthetics and font */
         body {
@@ -305,7 +308,7 @@
                         </ul>
                         <h3>Example Problems</h3>
                         <p>1.  Solve: 10 + 2 × 3 - 6</p>
-                        <p>2.  Solve: (5 + 1) × 4 ÷ 2^2</p>
+                        <p>2.  Solve: (5 + 1) × 4 ÷ 2²</p>
                         `
                     },
                     {
@@ -335,7 +338,7 @@
                             <li>Additive Identity: a + 0 = a</li>
                             <li>Multiplicative Identity: a · 1 = a</li>
                             <li>Additive Inverse: a + (-a) = 0</li>
-                            <li>Multiplicative Inverse: a · 1/a = 1</li>
+                            <li>Multiplicative Inverse: a · (1/a) = 1</li>
                         </ul>
                         `
                     }
@@ -388,7 +391,7 @@
                         <h3>Example:</h3>
                         <p>Solve for a: 2a + 8 = 20</p>
                         <p>1.  First, undo the addition by subtracting 8 from both sides: 2a + 8 - 8 = 20 - 8, which simplifies to 2a = 12.</p>
-                        <p>2.  Next, undo the multiplication by dividing both sides by 2: 2a ÷ 2 = 12 ÷ 2, which gives you a = 6.</p>
+                        <p>2.  Next, undo the multiplication by dividing both sides by 2: 2a/2 = 12/2, which gives you a = 6.</p>
                         `
                     }
                 ]
@@ -535,10 +538,10 @@
                     {
                         title: "Writing Equations from Two Points",
                         content: `
-                        <p>To write an equation from two points, first find the slope, then use the point-slope form (y - y_1 = m(x - x_1)) to find the equation.</p>
+                        <p>To write an equation from two points, first find the slope, then use the point-slope form (y - y₁ = m(x - x₁)) to find the equation.</p>
                         <h3>Example:</h3>
                         <p>Write the equation of the line passing through (-1, 5) and (3, -3).</p>
-                        <p>1.  Slope: m = (-3 - 5) / (3 - (-1)) = -8/4 = -2.</p>
+                        <p>1.  Slope: m = (-3 - 5)/(3 - (-1)) = -8/4 = -2.</p>
                         <p>2.  Use point-slope form with one of the points: y - 5 = -2(x - (-1)), which simplifies to y - 5 = -2x - 2, or y = -2x + 3.</p>
                         `
                     },
@@ -607,9 +610,18 @@
                         <h3>Example 1:</h3>
                         <p>Solve: 2x + 3y = 7 and 4x - 3y = 5.</p>
                         <p>Add the equations together to eliminate y. 6x = 12, so x = 2.</p>
-                        <h3>Example 2:</h3>
+                        `
+                    },
+                    {
+                        title: "Solving by Elimination (Multiplication)",
+                        content: `
+                        <p>Multiply the first equation by 3 and the second by 2 to get y coefficients that are opposites.</p>
+                        <h3>Example:</h3>
                         <p>Solve: 3x + 2y = 10 and 5x - 3y = -4.</p>
                         <p>Multiply the first equation by 3 and the second by 2 to get y coefficients that are opposites.</p>
+                        <p class="text-2xl text-center font-bold my-4"> 3(3x + 2y) = 3(10) → 9x + 6y = 30 </p>
+                        <p class="text-2xl text-center font-bold my-4"> 2(5x - 3y) = 2(-4) → 10x - 6y = -8 </p>
+                        <p>Now add the two new equations together to eliminate y. Then, solve for x.</p>
                         `
                     },
                     {
@@ -634,7 +646,7 @@
                         <ul>
                             <li><strong>Properties of Exponents:</strong> Product rule, quotient rule, power rule, zero exponent, negative exponents.</li>
                             <li><strong>Scientific Notation:</strong> Converting numbers to and from scientific notation.</li>
-                            <li><strong>Introduction to Exponential Functions:</strong> Basic form y = a · b^x.</li>
+                            <li><strong>Introduction to Exponential Functions:</strong> Basic form y = a · bˣ.</li>
                             <li><strong>Graphing Simple Exponential Functions:</strong> Understanding growth and decay.</li>
                         </ul>
                         `
@@ -643,24 +655,24 @@
                         title: "Properties of Exponents",
                         content: `
                         <ul>
-                            <li><strong>Product Rule:</strong> x^a · x^b = x^(a+b)</li>
-                            <li><strong>Quotient Rule:</strong> x^a ÷ x^b = x^(a-b)</li>
-                            <li><strong>Power Rule:</strong> (x^a)^b = x^(ab)</li>
-                            <li><strong>Zero Exponent:</strong> x^0 = 1</li>
-                            <li><strong>Negative Exponents:</strong> x^-a = 1/x^a</li>
+                            <li><strong>Product Rule:</strong> xª · xᵇ = xª⁺ᵇ</li>
+                            <li><strong>Quotient Rule:</strong> xª ÷ xᵇ = xª⁻ᵇ</li>
+                            <li><strong>Power Rule:</strong> (xª)ᵇ = xᵃᵇ</li>
+                            <li><strong>Zero Exponent:</strong> x⁰ = 1</li>
+                            <li><strong>Negative Exponents:</strong> x⁻ᵃ = 1/xᵃ</li>
                         </ul>
                         `
                     },
                     {
                         title: "Exponential Functions",
                         content: `
-                        <p>An <strong>exponential function</strong> is of the form y = a · b^x.</p>
+                        <p>An <strong>exponential function</strong> is of the form y = a · bˣ.</p>
                         <ul>
                             <li>If b > 1, it's **exponential growth**.</li>
                             <li>If 0 < b < 1, it's **exponential decay**.</li>
                         </ul>
                         <h3>Example:</h3>
-                        <p>Graph y = 2^x. This is an exponential growth function.</p>
+                        <p>Graph y = 2ˣ. This is an exponential growth function.</p>
                         `
                     }
                 ]
@@ -686,8 +698,8 @@
                         content: `
                         <p>To add or subtract polynomials, simply combine the like terms.</p>
                         <h3>Example:</h3>
-                        <p>(3x^2 + 2x - 5) + (x^2 - 4x + 7)</p>
-                        <p>Combine like terms: (3x^2 + x^2) + (2x - 4x) + (-5 + 7) = 4x^2 - 2x + 2.</p>
+                        <p>(3x² + 2x - 5) + (x² - 4x + 7)</p>
+                        <p>Combine like terms: (3x² + x²) + (2x - 4x) + (-5 + 7) = 4x² - 2x + 2.</p>
                         `
                     },
                     {
@@ -697,12 +709,12 @@
                         <h3>FOIL Method:</h3>
                         <p>(4y - 3)(2y + 1)</p>
                         <ul>
-                            <li><strong>First:</strong> (4y)(2y) = 8y^2</li>
+                            <li><strong>First:</strong> (4y)(2y) = 8y²</li>
                             <li><strong>Outer:</strong> (4y)(1) = 4y</li>
                             <li><strong>Inner:</strong> (-3)(2y) = -6y</li>
                             <li><strong>Last:</strong> (-3)(1) = -3</li>
                         </ul>
-                        <p>Combine: 8y^2 + 4y - 6y - 3 = 8y^2 - 2y - 3</p>
+                        <p>Combine: 8y² + 4y - 6y - 3 = 8y² - 2y - 3</p>
                         `
                     }
                 ]
@@ -717,8 +729,8 @@
                         <h3>Key Topics:</h3>
                         <ul>
                             <li><strong>Greatest Common Factor (GCF):</strong> Factoring out the largest common factor.</li>
-                            <li><strong>Factoring Trinomials (x^2 + bx + c):</strong> Finding two numbers that multiply to c and add to b.</li>
-                            <li><strong>Factoring Trinomials (ax^2 + bx + c):</strong> Using methods like grouping or trial and error.</li>
+                            <li><strong>Factoring Trinomials (x² + bx + c):</strong> Finding two numbers that multiply to c and add to b.</li>
+                            <li><strong>Factoring Trinomials (ax² + bx + c):</strong> Using methods like grouping or trial and error.</li>
                         </ul>
                         `
                     },
@@ -727,15 +739,15 @@
                         content: `
                         <p>Always look for the **Greatest Common Factor (GCF)** first.</p>
                         <h3>Example:</h3>
-                        <p>Factor 12x^3 - 8x^2 + 4x.</p>
-                        <p>The GCF is 4x. Factoring it out gives you: 4x(3x^2 - 2x + 1).</p>
+                        <p>Factor 12x³ - 8x² + 4x.</p>
+                        <p>The GCF is 4x. Factoring it out gives you: 4x(3x² - 2x + 1).</p>
                         `
                     },
                     {
                         title: "Factoring Trinomials",
                         content: `
-                        <p>To factor x^2 + 7x + 10, we look for two numbers that multiply to 10 and add to 7. The numbers are 2 and 5. The factored form is (x + 2)(x + 5).</p>
-                        <p>For more complex trinomials like 2x^2 + 5x - 3, you can use methods like grouping or trial and error to find the factors: (2x - 1)(x + 3).</p>
+                        <p>To factor x² + 7x + 10, we look for two numbers that multiply to 10 and add to 7. The numbers are 2 and 5. The factored form is (x + 2)(x + 5).</p>
+                        <p>For more complex trinomials like 2x² + 5x - 3, you can use methods like grouping or trial and error to find the factors: (2x - 1)(x + 3).</p>
                         `
                     }
                 ]
@@ -749,8 +761,8 @@
                         content: `
                         <h3>Key Topics:</h3>
                         <ul>
-                            <li><strong>Difference of Squares:</strong> Factoring a^2 - b^2.</li>
-                            <li><strong>Perfect Square Trinomials:</strong> Factoring a^2 + 2ab + b^2 and a^2 - 2ab + b^2.</li>
+                            <li><strong>Difference of Squares:</strong> Factoring a² - b².</li>
+                            <li><strong>Perfect Square Trinomials:</strong> Factoring a² + 2ab + b² and a² - 2ab + b².</li>
                             <li><strong>Zero Product Property:</strong> If ab = 0, then a = 0 or b = 0.</li>
                             <li><strong>Solving Quadratic Equations by Factoring:</strong> Setting equations to zero and factoring.</li>
                         </ul>
@@ -760,8 +772,8 @@
                         title: "Special Factoring Patterns",
                         content: `
                         <ul>
-                            <li><strong>Difference of Squares:</strong> 9x^2 - 16 = (3x - 4)(3x + 4)</li>
-                            <li><strong>Perfect Square Trinomials:</strong> y^2 - 10y + 25 = (y - 5)^2</li>
+                            <li><strong>Difference of Squares:</strong> 9x² - 16 = (3x - 4)(3x + 4)</li>
+                            <li><strong>Perfect Square Trinomials:</strong> y² - 10y + 25 = (y - 5)²</li>
                         </ul>
                         `
                     },
@@ -770,7 +782,7 @@
                         content: `
                         <p>To solve a quadratic equation by factoring, set it equal to zero, factor the polynomial, and then use the **Zero Product Property**.</p>
                         <h3>Example:</h3>
-                        <p>Solve x^2 + 5x + 6 = 0.</p>
+                        <p>Solve x² + 5x + 6 = 0.</p>
                         <p>Factor: (x + 2)(x + 3) = 0.</p>
                         <p>Solutions: x + 2 = 0 which gives x = -2 and x + 3 = 0 which gives x = -3.</p>
                         `
@@ -786,7 +798,7 @@
                         content: `
                         <h3>Key Topics:</h3>
                         <ul>
-                            <li><strong>Introduction to Quadratic Equations:</strong> Standard form ax^2 + bx + c = 0.</li>
+                            <li><strong>Introduction to Quadratic Equations:</strong> Standard form ax² + bx + c = 0.</li>
                             <li><strong>The Quadratic Formula:</strong> Using the formula to find solutions.</li>
                             <li><strong>The Discriminant:</strong> Determining the number and type of solutions.</li>
                             <li><strong>Graphing Quadratic Functions (Parabolas):</strong> Vertex, axis of symmetry, x-intercepts.</li>
@@ -796,20 +808,20 @@
                     {
                         title: "The Quadratic Formula",
                         content: `
-                        <p>The quadratic formula is used to find the solutions to any quadratic equation in the form ax^2 + bx + c = 0.</p>
-                        <p class="text-2xl text-center font-bold my-4"> x = (-b ± √(b^2 - 4ac)) / (2a) </p>
+                        <p>The quadratic formula is used to find the solutions to any quadratic equation in the form ax² + bx + c = 0.</p>
+                        <p class="text-2xl text-center font-bold my-4"> x = (-b ± √(b² - 4ac))/(2a) </p>
                         <h3>Example:</h3>
-                        <p>Solve 2x^2 - 3x - 5 = 0. Here, a=2, b=-3, c=-5.</p>
+                        <p>Solve 2x² - 3x - 5 = 0. Here, a=2, b=-3, c=-5.</p>
                         `
                     },
                     {
                         title: "The Discriminant",
                         content: `
-                        <p>The discriminant is the part of the quadratic formula under the square root: b^2 - 4ac. It tells you about the nature of the solutions.</p>
+                        <p>The discriminant is the part of the quadratic formula under the square root: b² - 4ac. It tells you about the nature of the solutions.</p>
                         <ul>
-                            <li>If b^2 - 4ac > 0, there are two real solutions.</li>
-                            <li>If b^2 - 4ac = 0, there is one real solution.</li>
-                            <li>If b^2 - 4ac < 0, there are no real solutions.</li>
+                            <li>If b² - 4ac > 0, there are two real solutions.</li>
+                            <li>If b² - 4ac = 0, there is one real solution.</li>
+                            <li>If b² - 4ac < 0, there are no real solutions.</li>
                         </ul>
                         `
                     }
@@ -837,7 +849,7 @@
                         <p>To simplify a radical, find the largest perfect square factor. To add or subtract radicals, they must have the same radicand.</p>
                         <h3>Examples:</h3>
                         <ul>
-                            <li>Simplify √72 = √(36 · 2) = 6√2.</li>
+                            <li>Simplify √72 = √(36 × 2) = 6√2.</li>
                             <li>Combine 3√5 + 2√5 = 5√5.</li>
                         </ul>
                         `
@@ -848,7 +860,7 @@
                         <p>To solve a radical equation, first get the radical by itself, then square both sides to eliminate the square root.</p>
                         <h3>Example:</h3>
                         <p>Solve √(x + 2) = 4.</p>
-                        <p>Square both sides: (√(x + 2))^2 = 4^2.</p>
+                        <p>Square both sides: (√(x + 2))² = 4².</p>
                         <p>This gives you x + 2 = 16, and the solution is x = 14.</p>
                         `
                     }
@@ -875,9 +887,9 @@
                         content: `
                         <p>Factor the numerator and the denominator, then cancel any common factors.</p>
                         <h3>Example:</h3>
-                        <p>Simplify (x^2 - 9) / (x^2 + 5x + 6)</p>
+                        <p>Simplify (x² - 9)/(x² + 5x + 6)</p>
                         <p>Factor: (x - 3)(x + 3) / ((x + 2)(x + 3))</p>
-                        <p>Cancel (x + 3) to get the simplified expression: (x - 3) / (x + 2).</p>
+                        <p>Cancel (x + 3) to get the simplified expression: (x - 3)/(x + 2).</p>
                         `
                     },
                     {
